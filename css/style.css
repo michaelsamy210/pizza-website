@@ -1,53 +1,63 @@
-/* 1. المتغيرات والأساسيات */
+/* ==========================================================================
+   1. المتغيرات وإعدادات الصفحة الأساسية (Variables & Base Styles)
+   ========================================================================== */
 :root {
-    --primary: #dc3545;
-    --dark: #111;
-    --light: #f8f9fa;
-    --text: #333;
+    --primary: #dc3545;  /* اللون الأحمر الأساسي للبراند */
+    --dark: #111;        /* اللون الأسود للخلفيات والفوتر */
+    --light: #f8f9fa;    /* اللون الرمادي الفاتح لتبادل السكاشن */
+    --text: #333;        /* لون النصوص الأساسية */
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* حركة تنقل ناعمة وسلسة عند الضغط على أزرار الـ Navbar */
 }
 
 body {
     font-family: 'Segoe UI', Arial, sans-serif;
     color: var(--text);
     line-height: 1.6;
-    padding-top: 80px;
+    padding-top: 80px; /* مسافة أمان علوية عشان المحتوى ما يدخلش تحت الـ Navbar الثابت */
 }
 
 section {
-    padding: 80px 0;
+    padding: 80px 0; /* مساحات متساوية وفراغات مريحة بين كل سكشن والتاني */
 }
 
-/* 2. الهيدر والـ Navbar */
+
+/* ==========================================================================
+   2. شريط التنقل العلوي (Header & Navbar Styles)
+   ========================================================================== */
 .navbar {
     padding: 15px 0;
-    transition: 0.3s;
+    transition: 0.3s ease; /* تنقل ناعم عند تغير الحجم أو اللون */
 }
 
+/* الكلاس ده بيتحقن بالجافا سكريبت أول ما المستخدم ينزل بالصفحة لتحت */
 .navbar.scrolled {
     background-color: var(--dark) !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* ضل خفيف يفرز الهيدر عن المحتوى */
 }
 
+/* تمييز الرابط النشط للسكشن اللي المستخدم واقف عنده حالياً */
 .nav-link.active {
     color: var(--primary) !important;
     font-weight: bold;
 }
 
-/* 3. سكشن الهيرو (الرئيسي) */
+
+/* ==========================================================================
+   3. سكشن الواجهة الرئيسية (Hero Section)
+   ========================================================================== */
 .hero {
-    min-height: 90vh;
+    min-height: 90vh; /* بياخد 90% من طول الشاشة عشان يظهر كواجهة كاملة */
     display: flex;
     align-items: center;
-    background-color: #fff8f0;
+    background-color: #fff8f0; /* خلفية دافئة تليق ببراند طعام */
 }
 
 .hero h1 {
     color: #222;
-    letter-spacing: -1px;
+    letter-spacing: -1px; /* تقريب الحروف لبعضها لإعطاء مظهر مودرن للعناوين العريضة */
 }
 
 .hero p {
@@ -55,11 +65,14 @@ section {
     font-size: 18px;
 }
 
-/* 4. الأزرار */
+
+/* ==========================================================================
+   4. الأزرار وتأثيرات الحركة (Buttons & Interactions)
+   ========================================================================== */
 .btn {
     border-radius: 12px;
     padding: 10px 25px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .btn-danger {
@@ -67,35 +80,44 @@ section {
     border-radius: 10px;
 }
 
+/* تأثير تفاعلي عند وقوف الماوس على الزرار (يرتفع للأعلى ويكبر سنة مع ضل ناعم) */
 .btn:hover {
     transform: translateY(-2px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-/* 5. سكشن عن المطعم */
+
+/* ==========================================================================
+   5. سكشن معلومات عن المطعم (About Section)
+   ========================================================================== */
 .about {
     background-color: var(--light);
 }
 
 .about img {
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* زوم إن خفيف على صورة الأباوت عند التفاعل */
 .about img:hover {
     transform: scale(1.03);
 }
 
-/* 6. سكشن المنيو والكروت */
+
+/* ==========================================================================
+   6. سكشن قائمة الطعام والـ Cards (Menu Section)
+   ========================================================================== */
 .menu {
     background-color: #fff;
 }
 
 .card {
     border-radius: 15px;
-    overflow: hidden;
-    transition: 0.3s;
+    overflow: hidden; /* عشان حواف الصورة تاخد نفس انحناء الكارت ومتطلعش برة */
+    transition: 0.3s ease;
 }
 
+/* حركة ارتفاع الكارت للأعلى عند الهوفر ليعطي إيحاء بالضغط */
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(0,0,0,0.15);
@@ -103,25 +125,30 @@ section {
 
 .card img {
     height: 250px;
-    object-fit: cover;
-    transition: 0.4s;
+    object-fit: cover; /* بيحافظ على أبعاد صورة البيتزا جوة الكارت بدون تشويه */
+    transition: 0.4s ease;
 }
 
+/* زوم ان لصورة البيتزا جوة الكارت نفسه عند الهوفر */
 .card:hover img {
     transform: scale(1.1);
 }
 
-/* 7. سكشن العروض (تصحيح المسار هنا) */
+
+/* ==========================================================================
+   7. سكشن العروض والخصومات (Offers Section)
+   ========================================================================== */
 .offers {
     background-color: var(--dark);
 }
 
 .offer-box {
+    /* دمج طبقة معتمة شفافة فوق الصورة لضمان وضوح وقرائية النص الأبيض */
     background-image: linear-gradient(
         rgba(0,0,0,0.6),
         rgba(0,0,0,0.6)
     ),
-    url("./images/offer.jpg"); /* تم تصحيح النقطتين لنقطة واحدة لتناسب جيت هاب */
+    url("./images/offer.jpg"); /* مسار نسبي بنقطة واحدة ليتوافق مع سيرفر جيت هاب */
 
     background-size: cover;
     background-position: center;
@@ -129,7 +156,10 @@ section {
     border-radius: 20px;
 }
 
-/* 8. سكشن التواصل والفورم */
+
+/* ==========================================================================
+   8. سكشن فورم التواصل (Contact Section)
+   ========================================================================== */
 .contact {
     background-color: var(--light);
 }
@@ -140,23 +170,32 @@ section {
 }
 
 textarea {
-    resize: none;
+    resize: none; /* إلغاء خاصية تكبير وسحب صندوق النص يدوياً للحفاظ على الهيكل */
 }
 
-/* 9. الفوتر */
+
+/* ==========================================================================
+   9. تذييل الصفحة (Footer Section)
+   ========================================================================== */
 .footer {
     background-color: var(--dark);
 }
 
 .footer a {
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+/* توهج روابط الفوتر باللون الأحمر عند مرور الماوس */
 .footer a:hover {
     color: red !important;
 }
 
-/* 10. زرار الصعود والـ Loader والأنيميشن */
+
+/* ==========================================================================
+   10. عناصر التحكم والتحميل والأنيميشن (Controls, Loader & Animations)
+   ========================================================================== */
+
+/* زرار الصعود السريع لأعلى الصفحة */
 #topBtn {
     position: fixed;
     bottom: 20px;
@@ -168,9 +207,9 @@ textarea {
     background-color: var(--primary);
     color: white;
     font-size: 20px;
-    display: none;
+    display: none; /* بيختفي ويظهر بالجافا سكريبت بناءً على مسافة التمرير */
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
     z-index: 999;
 }
 
@@ -178,6 +217,7 @@ textarea {
     transform: scale(1.1);
 }
 
+/* شاشة الفول سكرين السوداء للتحميل الأولي */
 #loader {
     position: fixed;
     width: 100%;
@@ -188,15 +228,17 @@ textarea {
     justify-content: center;
     align-items: center;
     font-size: 30px;
-    z-index: 9999;
+    z-index: 9999; /* أعلى z-index لضمان حجبه للموقع بالكامل حتى ينتهي التحميل */
 }
 
+/* تأثير الأنيميشن للصعود والظهور التدريجي للسكاشن عند النزول */
 .fade-up {
     opacity: 0;
     transform: translateY(40px);
     transition: 0.6s ease;
 }
 
+/* الكلاس الشغال اللي بيتحقن بواسطة الـ Intersection Observer في الجافا سكريبت */
 .fade-up.show {
     opacity: 1;
     transform: translateY(0);
