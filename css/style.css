@@ -143,12 +143,11 @@ section {
 }
 
 .offer-box {
-    /* دمج طبقة معتمة شفافة فوق الصورة لضمان وضوح وقرائية النص الأبيض */
     background-image: linear-gradient(
         rgba(0,0,0,0.6),
         rgba(0,0,0,0.6)
     ),
-    url("./images/offer.jpg"); /* مسار نسبي بنقطة واحدة ليتوافق مع سيرفر جيت هاب */
+    url("../images/offer.jpg"); /* جرب تعديل المسار بنقطتين عشان يخرج من فولدر الـ css ويروح لفولدر الـ images */
 
     background-size: cover;
     background-position: center;
